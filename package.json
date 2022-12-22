@@ -1,8 +1,12 @@
 {
   "name": "react-native-swipeable-carousel",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A simple swipeable carousel within a card",
   "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aashishshrestha5532/react-native-swipeable-carousel.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
