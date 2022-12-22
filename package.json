@@ -1,0 +1,27 @@
+{
+  "name": "react-native-swipeable-carousel",
+  "version": "1.0.2",
+  "description": "A simple swipeable carousel within a card",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "carousel",
+    "swiper",
+    "card",
+    "react-native-pager-view",
+    "react-native-simple-carousel",
+    "react-native-swipeable-carousel"
+  ],
+  "dependencies": {
+    
+  },
+  "peerDependencies": {
+    "react-native-size-matters":">=0.4.0",
+    "react-native-svg":">=12.3.0"
+  },
+  "author": "Ashish Shrestha",
+  "license": "MIT"
+}
