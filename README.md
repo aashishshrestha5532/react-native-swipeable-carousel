@@ -4,7 +4,7 @@
 
 ## Preview
 
-![preview](https://ibb.co/19LcR5P)
+![preview](screenshot.png)
 
 ## Get started
 
