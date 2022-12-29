@@ -1,7 +1,7 @@
 # React Native Swipeable Carousel
 
 
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/tarasvakulka/react-native-cards-swipe/issues)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/aashishshrestha5532/react-native-swipeable-carousel/issues)
 [![npm version](https://badge.fury.io/js/react-native-swipeable-carousel.svg)](https://badge.fury.io/js/react-native-swipeable-carousel)
 [![npm downloads](https://img.shields.io/npm/dt/react-native-swipeable-carousel.svg)](https://badge.fury.io/js/react-native-swipeable-carousel)
 

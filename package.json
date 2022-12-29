@@ -1,6 +1,6 @@
 {
   "name": "react-native-swipeable-carousel",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A simple swipeable carousel within a card",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
