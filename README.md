@@ -1,17 +1,29 @@
 # React Native Swipeable Carousel
 
-[![npm version](https://img.shields.io/badge/npm%20package-v1.0.2-blue.svg)](https://www.npmjs.com/package/react-native-swipeable-carousel)
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/tarasvakulka/react-native-cards-swipe/issues)
+[![npm version](https://badge.fury.io/js/react-native-swipeable-carousel.svg)](https://badge.fury.io/js/react-native-swipeable-carousel)
+[![npm downloads](https://img.shields.io/npm/dt/react-native-swipeable-carousel.svg)](https://badge.fury.io/js/react-native-swipeable-carousel)
+
+A simple swipeable carousel created on the top of react-native-pager-view
+
 
 ## Preview
 
-![preview](screenshot.png)
+![demo gif](https://s3.gifyu.com/images/Screen-Recording-2022-12-28-at-18.55.54.gif)
 
 ## Get started
 
+
+### Pre-requisites
+
+Since this package is created on the top of react native pager view and other libraries. So first you need to install them.
+
+      yarn add react-native-size-matters react-native-pager-view react-native-svg
+
 ### Installation
 
-Run: `npm install react-native-swipeable-carousel` OR
-`yarn add react-native-swipeable-carousel`
+      yarn add react-native-swipeable-carousel
 
 ### Usage
 
@@ -26,19 +38,25 @@ const data = [
 ];
 
 <Carousel
-  data={data}
+  images={data}
+  enableGestureSwipe={true}
 />
 ```
 
 ### Properties
 | Prop | Description | Default | Required
 |---|---|---|---|
-|**`data`**|An array of images (urls). Read bellow about **Data array structure**. |*None*|Yes|
+|**`images`**|An array of images (urls or local). |*None*|Yes|
 |**`height`**|Carousel height.|`200`|No|
 |**`width`**|Carousel width.|`400`|No|
-|**`onPress`**|A function called when an item is pressed|*None*|No|
+|**`enableGestureSwipe`**|Enable gesture swipe(left/right).|`false`|No|
 
 
+
+## Peer dependencies
+1. react-native-pager-view
+2. react-native-size-matters
+3. react-native-svg
 
 ## License
 

@@ -1,8 +1,8 @@
-import React from 'react';
-import {StyleSheet, View, Animated} from 'react-native';
-import PagerView from 'react-native-pager-view';
-import {moderateScale} from 'react-native-size-matters';
-import AbstractAvatar from './Image';
+import React from "react";
+import { StyleSheet, View, Animated } from "react-native";
+import PagerView from "react-native-pager-view";
+import { moderateScale } from "react-native-size-matters";
+import AbstractAvatar from "./Image";
 
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
@@ -11,13 +11,13 @@ interface IProps {
   pageRef: any;
   scrollOffsetAnimatedValue: any;
   positionAnimatedValue: any;
-  currentPosition: number;
+  currentPosition: (value: number) => void;
   initialPage: number;
   allBorder: boolean;
-  onMomentScroll: () => void;
+  onMomentScroll: (value?: boolean) => void;
   leftBorderOnly: boolean;
   borderRadius: number;
-  gestureDisable: boolean;
+  gestureEnable: boolean;
   noBorder: boolean;
 }
 
@@ -31,19 +31,19 @@ const ViewPager = ({
   allBorder,
   onMomentScroll,
   borderRadius,
-  gestureDisable,
+  gestureEnable,
   noBorder,
 }: IProps) => {
   const defaultBorderRad = borderRadius ? borderRadius : 15;
 
-  const handleDragState = ({nativeEvent}: {nativeEvent: any}) => {
+  const handleDragState = ({ nativeEvent }: { nativeEvent: any }) => {
     if (onMomentScroll) {
-      if (nativeEvent.pageScrollState === 'dragging') {
+      if (nativeEvent.pageScrollState === "dragging") {
         onMomentScroll(true);
       }
       if (
-        nativeEvent.pageScrollState === 'idle' ||
-        nativeEvent.pageScrollState === 'settling'
+        nativeEvent.pageScrollState === "idle" ||
+        nativeEvent.pageScrollState === "settling"
       ) {
         onMomentScroll(false);
       }
@@ -58,11 +58,11 @@ const ViewPager = ({
         borderTopLeftRadius: 15,
         borderTopRightRadius: 15,
       }}
-      onPageSelected={e => {
+      onPageSelected={(e) => {
         currentPosition(e.nativeEvent.position);
       }}
       onPageScrollStateChanged={handleDragState}
-      scrollEnabled={gestureDisable ? true : false}
+      scrollEnabled={gestureEnable ? true : false}
       initialPage={initialPage ? initialPage : 0}
       ref={pageRef}
       onPageScroll={Animated.event(
@@ -75,26 +75,31 @@ const ViewPager = ({
           },
         ],
         {
-          listener: ({nativeEvent: {offset, position}}) => {},
+          listener: ({ nativeEvent: { offset, position } }) => {},
           useNativeDriver: true,
-        },
+        }
       )}
-      onMoveShouldSetResponderCapture={() => true}>
+      onMoveShouldSetResponderCapture={() => true}
+    >
       {item?.map((singleItem, index) => (
         <View
-          key={singleItem._id}
+          key={index}
           style={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            position: 'relative',
+            justifyContent: "center",
+            alignItems: "center",
+            position: "relative",
             borderTopLeftRadius: 15,
             borderTopRightRadius: 15,
-          }}>
-          <View key={index} style={[styles.imageContainer]}>
+          }}
+        >
+          <View style={[styles.imageContainer]}>
             <AbstractAvatar
               noBorder={true}
               allBorder={allBorder}
               imageSource={singleItem}
+              leftBordersOnly={false}
+              borderRadius={0}
+              bgColor={""}
             />
           </View>
         </View>
@@ -107,29 +112,29 @@ export default ViewPager;
 
 const styles = StyleSheet.create({
   imageContainer: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
-    position: 'relative',
+    position: "relative",
   },
   textContainer: {
-    width: '80%',
+    width: "80%",
     height: 100,
-    alignItems: 'center',
+    alignItems: "center",
   },
   viewTwo: {
     width: moderateScale(147, 0.1),
     height: moderateScale(23, 0.1),
-    backgroundColor: 'rgba(0, 0, 0, 0.57)',
+    backgroundColor: "rgba(0, 0, 0, 0.57)",
     borderRadius: 6,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   textFour: {
-    fontFamily: 'bold',
-    color: 'rgba(63, 71, 82, 0.5)',
+    fontFamily: "bold",
+    color: "rgba(63, 71, 82, 0.5)",
     fontSize: moderateScale(10, 0.1),
   },
 });

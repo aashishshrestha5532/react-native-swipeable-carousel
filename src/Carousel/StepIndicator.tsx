@@ -1,10 +1,10 @@
-import React from 'react';
-import {Animated, StyleSheet, View} from 'react-native';
+import React from "react";
+import { Animated, StyleSheet, View } from "react-native";
 
 interface IProps {
   index: number;
   animatedValue: any;
-  indicatorStyleTwo: number;
+  indicatorStyleTwo: boolean;
 }
 
 const OnBoardingIndicators = ({
@@ -15,7 +15,7 @@ const OnBoardingIndicators = ({
   const indicatorOpacity = animatedValue.interpolate({
     inputRange: [index - 1, index, index + 1],
     outputRange: [0.33, 1.2, 0.33],
-    extrapolate: 'clamp',
+    extrapolate: "clamp",
   });
   return (
     <View>
@@ -24,7 +24,7 @@ const OnBoardingIndicators = ({
           styles.dotOne,
           {
             opacity: indicatorOpacity,
-            backgroundColor: indicatorStyleTwo ? '#F7F9FF' : '##000000',
+            backgroundColor: indicatorStyleTwo ? "#F7F9FF" : "##000000",
           },
         ]}
       />
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   dotOne: {
     width: 5,
     height: 5,
-    backgroundColor: '#F7F9FF',
+    backgroundColor: "#F7F9FF",
     borderRadius: 5,
     marginHorizontal: 0,
     marginLeft: 7,

@@ -10,9 +10,10 @@ interface IProps {
   indicatorStyleTwoHeight: number;
   item: string[];
   allBorder?: boolean;
-  indicatorStyleTwo: number;
-  onMomentScroll: () => void;
-  gestureDisable: boolean;
+  height: number;
+  indicatorStyleTwo?: boolean;
+  onMomentScroll?: () => void;
+  gestureEnable: boolean;
   noBorder?: boolean;
 }
 
@@ -20,9 +21,10 @@ const Slider = ({
   indicatorStyleTwoHeight,
   item,
   allBorder,
+  height,
   indicatorStyleTwo,
   onMomentScroll,
-  gestureDisable,
+  gestureEnable,
   noBorder,
 }: IProps) => {
   const pageRef = useRef(null);
@@ -56,8 +58,10 @@ const Slider = ({
         currentPosition={currentPosition}
         allBorder={allBorder}
         noBorder={noBorder}
-        gestureDisable={gestureDisable}
+        gestureEnable={gestureEnable}
         onMomentScroll={onMomentScroll}
+        leftBorderOnly={false}
+        borderRadius={0}
       />
       {initialPage != 0 ? (
         <View style={styles.viewLeft}>

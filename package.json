@@ -1,13 +1,15 @@
 {
   "name": "react-native-swipeable-carousel",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "A simple swipeable carousel within a card",
-  "main": "src/index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git@github.com:aashishshrestha5532/react-native-swipeable-carousel.git"
   },
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -19,13 +21,21 @@
     "react-native-simple-carousel",
     "react-native-swipeable-carousel"
   ],
-  "dependencies": {
-    
-  },
+  "dependencies": {},
   "peerDependencies": {
-    "react-native-size-matters":">=0.4.0",
-    "react-native-svg":">=12.3.0"
+    "react-native-size-matters": ">=0.4.0",
+    "react-native-svg": ">=12.3.0",
+    "react-native-pager-view": "^6.1.2"
   },
   "author": "Ashish Shrestha",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "react": "^18.2.0",
+    "react-native": "^0.70.6",
+    "react-native-pager-view": "^6.1.2",
+    "react-native-size-matters": "^0.4.0",
+    "typescript": "^4.9.4",
+    "react-native-svg": ">=12.3.0"
+  }
 }
