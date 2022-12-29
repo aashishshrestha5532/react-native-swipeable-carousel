@@ -49,11 +49,11 @@ const data = [
 |**`images`**|An array of images (urls or local). |*None*|Yes|
 |**`height`**|Carousel height.|`200`|No|
 |**`width`**|Carousel width.|`400`|No|
-|**`enableGestureSwipe`**|Setup gesture swipe.|`false`|No|
+|**`enableGestureSwipe`**|Enable gesture swipe(left/right).|`false`|No|
 
 
 
-### Peer dependencies
+## Peer dependencies
 1. react-native-pager-view
 2. react-native-size-matters
 3. react-native-svg
