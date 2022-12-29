@@ -54,7 +54,11 @@ const AbstractAvatar = ({
             ]}
           >
             <Image
-              uri={imageSource}
+              source={
+                typeof imageSource === "string"
+                  ? { uri: imageSource }
+                  : imageSource
+              }
               style={[{ width: "100%", height: "100%" }, { ...myBorders }]}
             />
           </View>
