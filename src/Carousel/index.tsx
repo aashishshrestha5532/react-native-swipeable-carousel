@@ -1,11 +1,11 @@
-import { View, Text, SafeAreaView } from "react-native";
+import { View, ImageSourcePropType } from "react-native";
 import React from "react";
 import Slider from "./Slider";
 import { moderateScale } from "react-native-size-matters";
 
 interface IProps {
-  height: number;
-  images: string[];
+  height?: number;
+  images: (string | ImageSourcePropType)[];
   enableGestureSwipe?: boolean;
 }
 

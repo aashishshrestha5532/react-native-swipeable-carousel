@@ -1,19 +1,17 @@
 {
-    "compilerOptions": {
-        "target": "es6",
-        "module": "es6",
-        "declaration": true,
-        "outDir": "./lib",
-        "strict": false,
-        "moduleResolution": "node",
-        "jsx": "react-native",
-        "allowSyntheticDefaultImports": true
-    },
-    "include": [
-        "src",
-    ],
-    "exclude": [
-        "node_modules",
-        "**/__tests__/*"
-    ]
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "react-native",
+    "declaration": true,
+    "allowJs": true,
+    "outDir": "./lib",
+    "strict": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/*"]
 }

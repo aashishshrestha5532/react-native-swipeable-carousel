@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image } from "react-native";
+import { StyleSheet, View, Image, ImageSourcePropType } from "react-native";
 import React from "react";
 
 const Color = {
@@ -6,7 +6,7 @@ const Color = {
 };
 
 interface IProps {
-  imageSource: string;
+  imageSource: string | ImageSourcePropType;
   allBorder: boolean;
   leftBordersOnly: boolean;
   borderRadius: number;
@@ -32,7 +32,7 @@ const AbstractAvatar = ({
   };
   return (
     <View style={[styles.mainContainer]}>
-      <View style={{ ...StyleSheet.absoluteFillObject }}>
+      <View style={styles.absoluteFill}>
         <View
           style={[
             styles.layerOne,
@@ -74,6 +74,13 @@ const styles = StyleSheet.create({
   mainContainer: {
     width: "100%",
     height: "100%",
+  },
+  absoluteFill: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
   },
   layerOne: {
     flex: 1,
