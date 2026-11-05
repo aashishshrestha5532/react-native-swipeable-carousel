@@ -13,10 +13,11 @@
   },
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "yarn clean && tsc",
+    "build": "npm run clean && tsc",
     "typecheck": "tsc --noEmit",
-    "prepare": "yarn build"
+    "prepare": "npm run build"
   },
+  "packageManager": "yarn@1.22.22",
   "keywords": [
     "react-native",
     "carousel",
@@ -29,7 +30,7 @@
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-native": ">=0.72.0",
-    "react-native-pager-view": ">=6.1.2",
+    "react-native-pager-view": "^6.1.2 || ^7.0.0 || ^8.0.0 || ^9.0.0",
     "react-native-size-matters": ">=0.4.0",
     "react-native-svg": ">=12.3.0"
   },
