@@ -8,6 +8,10 @@ import { moderateScale } from "react-native-size-matters";
 import type PagerView from "react-native-pager-view";
 import type { ImageSourcePropType } from "react-native";
 
+// The arrow icon is only 13 x 35 pt. Extend the touch area to at least 44 pt wide
+// (Apple's minimum) without changing how the arrows look.
+const ARROW_HIT_SLOP = { top: 20, bottom: 20, left: 16, right: 16 };
+
 interface IProps {
   indicatorStyleTwoHeight: number;
   item: (string | ImageSourcePropType)[];
@@ -67,7 +71,12 @@ const Slider = ({
       />
       {initialPage != 0 ? (
         <View style={styles.viewLeft}>
-          <TouchableOpacity onPress={() => backToPrevious(initialPage - 1)}>
+          <TouchableOpacity
+            onPress={() => backToPrevious(initialPage - 1)}
+            hitSlop={ARROW_HIT_SLOP}
+            accessibilityRole="button"
+            accessibilityLabel="Previous image"
+          >
             <ImageArrowLeftSvg />
           </TouchableOpacity>
         </View>
@@ -79,7 +88,12 @@ const Slider = ({
         false
       ) : (
         <View style={styles.viewRight}>
-          <TouchableOpacity onPress={() => goToNext(initialPage + 1)}>
+          <TouchableOpacity
+            onPress={() => goToNext(initialPage + 1)}
+            hitSlop={ARROW_HIT_SLOP}
+            accessibilityRole="button"
+            accessibilityLabel="Next image"
+          >
             <ImageArrowRightSvg />
           </TouchableOpacity>
         </View>
