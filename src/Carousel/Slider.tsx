@@ -85,16 +85,18 @@ const Slider = ({
         </View>
       )}
 
-      <View
-        style={[
-          styles.viewFour,
-          {
-            bottom: indicatorStyleTwo ? defaultIndicatorStyleTwoHeight : -15,
-          },
-        ]}
-      >
-        {item?.length > 1 &&
-          item?.map((item, index) => {
+      {item?.length > 1 ? (
+        <View
+          style={[
+            styles.viewFour,
+            // White dots sit on a dark pill so they stay visible on light images.
+            indicatorStyleTwo && styles.dotsPill,
+            {
+              bottom: indicatorStyleTwo ? defaultIndicatorStyleTwoHeight : -15,
+            },
+          ]}
+        >
+          {item.map((item, index) => {
             return (
               <React.Fragment key={index}>
                 <StepIndicator
@@ -108,7 +110,8 @@ const Slider = ({
               </React.Fragment>
             );
           })}
-      </View>
+        </View>
+      ) : null}
     </React.Fragment>
   );
 };
@@ -136,6 +139,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     position: "absolute",
     alignSelf: "center",
+  },
+  dotsPill: {
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.4)",
+    borderRadius: 10,
+    paddingVertical: 5,
+    // Each dot has marginLeft: 7, so pad the right side to match.
+    paddingRight: 7,
   },
   viewLeft: {
     width: 40,
