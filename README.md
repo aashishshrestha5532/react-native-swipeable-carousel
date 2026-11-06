@@ -88,7 +88,6 @@ Other changes in 2.0:
 - Works with React 19 and current React Native. The image layer used `StyleSheet.absoluteFillObject`, which was removed from React Native; on current versions that style was silently empty, so images lost their full-size layout. It now uses an explicit style.
 - `images` is typed as `(string | ImageSourcePropType)[]`, so local images from `require(...)` typecheck.
 - `height` is now optional in the TypeScript types.
-- Inactive dot colour fixed (was the invalid value `##000000`).
 
 ## Peer dependencies
 

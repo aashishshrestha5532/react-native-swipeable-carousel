@@ -14,7 +14,7 @@ const OnBoardingIndicators = ({
 }: IProps) => {
   const indicatorOpacity = animatedValue.interpolate({
     inputRange: [index - 1, index, index + 1],
-    outputRange: [0.33, 1.2, 0.33],
+    outputRange: [0.5, 1, 0.5],
     extrapolate: "clamp",
   });
   return (
