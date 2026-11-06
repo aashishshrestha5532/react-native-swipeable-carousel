@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Animated } from "react-native";
+import { StyleSheet, View, Animated, ImageSourcePropType } from "react-native";
 import PagerView from "react-native-pager-view";
 import { moderateScale } from "react-native-size-matters";
 import AbstractAvatar from "./Image";
@@ -7,14 +7,14 @@ import AbstractAvatar from "./Image";
 const AnimatedPagerView = Animated.createAnimatedComponent(PagerView);
 
 interface IProps {
-  item: string[];
-  pageRef: any;
-  scrollOffsetAnimatedValue: any;
-  positionAnimatedValue: any;
+  item: (string | ImageSourcePropType)[];
+  pageRef: React.Ref<any>;
+  scrollOffsetAnimatedValue: Animated.Value;
+  positionAnimatedValue: Animated.Value;
   currentPosition: (value: number) => void;
   initialPage: number;
   allBorder: boolean;
-  onMomentScroll: (value?: boolean) => void;
+  onMomentScroll?: (value?: boolean) => void;
   leftBorderOnly: boolean;
   borderRadius: number;
   gestureEnable: boolean;
@@ -74,10 +74,7 @@ const ViewPager = ({
             },
           },
         ],
-        {
-          listener: ({ nativeEvent: { offset, position } }) => {},
-          useNativeDriver: true,
-        }
+        { useNativeDriver: true }
       )}
       onMoveShouldSetResponderCapture={() => true}
     >

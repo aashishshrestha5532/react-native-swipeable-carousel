@@ -3,8 +3,8 @@ import { Animated, StyleSheet, View } from "react-native";
 
 interface IProps {
   index: number;
-  animatedValue: any;
-  indicatorStyleTwo: boolean;
+  animatedValue: ReturnType<typeof Animated.add>;
+  indicatorStyleTwo?: boolean;
 }
 
 const OnBoardingIndicators = ({
@@ -24,7 +24,7 @@ const OnBoardingIndicators = ({
           styles.dotOne,
           {
             opacity: indicatorOpacity,
-            backgroundColor: indicatorStyleTwo ? "#F7F9FF" : "##000000",
+            backgroundColor: indicatorStyleTwo ? "#F7F9FF" : "#000000",
           },
         ]}
       />

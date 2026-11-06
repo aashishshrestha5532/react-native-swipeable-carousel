@@ -5,14 +5,16 @@ import StepIndicator from "./StepIndicator";
 import ImageArrowLeftSvg from "./imageArrowLeftSvg";
 import ImageArrowRightSvg from "./imageArrowRightSvg";
 import { moderateScale } from "react-native-size-matters";
+import type PagerView from "react-native-pager-view";
+import type { ImageSourcePropType } from "react-native";
 
 interface IProps {
   indicatorStyleTwoHeight: number;
-  item: string[];
+  item: (string | ImageSourcePropType)[];
   allBorder?: boolean;
   height: number;
   indicatorStyleTwo?: boolean;
-  onMomentScroll?: () => void;
+  onMomentScroll?: (isScrolling?: boolean) => void;
   gestureEnable: boolean;
   noBorder?: boolean;
 }
@@ -27,7 +29,7 @@ const Slider = ({
   gestureEnable,
   noBorder,
 }: IProps) => {
-  const pageRef = useRef(null);
+  const pageRef = useRef<PagerView>(null);
   const [initialPage, setInitialPage] = useState(0);
   const scrollOffsetAnimatedValue = React.useRef(new Animated.Value(0)).current;
   const positionAnimatedValue = React.useRef(new Animated.Value(0)).current;
@@ -40,11 +42,11 @@ const Slider = ({
   };
 
   const goToNext = (myPage: number) => {
-    pageRef.current.setPage(myPage);
+    pageRef.current?.setPage(myPage);
   };
 
   const backToPrevious = (myPage: number) => {
-    pageRef.current.setPage(myPage);
+    pageRef.current?.setPage(myPage);
   };
 
   return (
