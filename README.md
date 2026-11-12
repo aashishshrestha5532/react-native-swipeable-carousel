@@ -57,6 +57,8 @@ The carousel always fills the width of its parent, so set the width on a wrappin
 | 2.x                             | >= 18  | >= 0.72      | 6.x, 7.x, 8.x or 9.x (see below)             |
 | 1.x                             | 18     | 0.70         | 6.x                                          |
 
+2.x is tested on iOS and Android with React Native 0.88 (New Architecture) and 0.81 (old architecture). Older versions down to 0.72 should work but are untested.
+
 ### Which react-native-pager-view version to install
 
 | Your app                                               | Install                         |
