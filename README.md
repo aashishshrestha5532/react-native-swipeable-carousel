@@ -8,7 +8,9 @@ A simple swipeable carousel created on the top of react-native-pager-view
 
 ## Preview
 
-![demo gif](https://s3.gifyu.com/images/Screen-Recording-2022-12-28-at-18.55.54.gif)
+<img src="https://raw.githubusercontent.com/aashishshrestha5532/react-native-swipeable-carousel/main/docs/demo.gif" width="360" alt="Carousel in a card: swiping between photos, tapping the arrows, and the page dots following" />
+
+<sub>Photos from Wikimedia Commons, cropped: <a href="https://commons.wikimedia.org/wiki/File:Gokyo_Ri_summit,_Gokyo_Lake,_Nepal,_Himalayas.jpg">Gokyo Lake</a>, <a href="https://commons.wikimedia.org/wiki/File:Everest,_Himalayas.jpg">Everest</a> and <a href="https://commons.wikimedia.org/wiki/File:Himalayas,_Nepal.jpg">Himalayas</a> by Vyacheslav Argenberg (CC BY 4.0); <a href="https://commons.wikimedia.org/wiki/File:Lake_Gosaikunda.jpg">Gosaikunda</a> by Sergey Pesterev and <a href="https://commons.wikimedia.org/wiki/File:Machapuchare_Himal-3797.jpg">Machapuchare</a> by Bijay Chaurasia (CC BY-SA 4.0).</sub>
 
 ## Get started
 
